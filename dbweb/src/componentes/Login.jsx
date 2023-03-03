@@ -1,5 +1,7 @@
 import { useState } from "react"
 import * as API from '../servicios/servicios'
+import { Form, Button } from 'react-bootstrap';
+import './LoginForm.css';
 export function Login(){
 
 const [user, setUser] = useState('');
@@ -30,11 +32,6 @@ const send_form = async(event)=>{
 
     return(
         <>
-        <div className="card">
-
-            <div className="container">
-                <form onSubmit={send_form}>
-                <h1 className="h3 mb-3 fw-normal">Iniciar Sesión</h1>
                 {
                     MensajeError?
                     <div class="alert alert-warning" role="alert">
@@ -43,22 +40,30 @@ const send_form = async(event)=>{
                     :('')
 
                 }
-                <div className="form-floating">
-                <input required type="text" className="form-control" id="floatingInput" placeholder="name@example.com" value={user} onChange={(event)=>setUser(event.target.value)}/>
-                <label for="floatingInput">Usuario</label>
+                <div>
+                        <div className="login-header">
+                            <h1>Bienvenido!</h1>
+                        </div>
+                <div className="login-form-container">
+                <Form onSubmit={send_form}>
+                    <Form.Group controlId="formBasicEmail" className="form-group-small">
+                        <Form.Label className="my-label">Nombre de Usuario</Form.Label>
+                        <Form.Control type="text" placeholder="" value={user} onChange={(event) => setUser(event.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword" className="form-group-small">
+                        <Form.Label className="my-label">Password</Form.Label>
+                        <Form.Control type="password" placeholder="" value={password} onChange={(event) => setPassword(event.target.value)} />
+                    </Form.Group>
+                    <Form.Group className="form-group-center">
+                    <Button variant="primary" type="submit">
+                        Iniciar Sesion
+                    </Button>
+                    </Form.Group>
+                </Form>
                 </div>
-                <div className="form-floating">
-                <input required type="password" className="form-control" id="floatingPassword" placeholder="Password" value={password} onChange={(event)=>setPassword(event.target.value)}/>
-                <label for="floatingPassword">Contraseña</label>
                 </div>
-            
-                <button className="w-100 btn btn-lg btn-primary" type="submit">
-                    Iniciar Sesión
-                </button>
-            </form>
-            </div>
-            
-      </div>
+
       </>
     )
 }

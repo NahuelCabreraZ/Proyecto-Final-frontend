@@ -1,0 +1,46 @@
+.login-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  .form-group-small {
+    max-width: 300px;
+    width: 80%;
+  }
+  
+  .form-group-center {
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .login-header {
+      height: 15vh;
+    }
+  
+    h1 {
+      font-size: 4rem;
+    }
+  
+    .login-form-container {
+      height: 70vh;
+    }
+  
+    .form-group-small {
+      max-width: 400px;
+    }
+  }
