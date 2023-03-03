@@ -3,13 +3,14 @@ import { NavBar } from "./NavBar";
 import { ListadoAbogados } from './ListadoAbogados';
 import { CrearConsulta } from './CrearConsulta';
 import { Login } from './Login'
+import { NavBarBootstrap } from './NavBarBootstrap';
+
 
 export function Principal() {
   return (
     <>
-    <NavBar/>
+    <NavBarBootstrap/>
       <div className="App">
-        <h1>PAGINA PRINCIPAL</h1>
       </div>
       <Routes>
       <Route path='/abogados' element = {<ListadoAbogados/>}></Route>

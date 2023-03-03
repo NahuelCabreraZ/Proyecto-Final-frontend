@@ -48,6 +48,24 @@ export async function BajaCliente(id_clientes){
     } 
    }
 
+   export async function AltaCliente(id_clientes){
+    const jsonTextInput = {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       }
+    };
+    console.log('Guarda en servicios el id_cliente?',id_clientes)
+    try{
+    const response = await fetch(`${API_URL}/altacliente/${id_clientes}`, jsonTextInput);
+    const data = await response.json();
+    console.log('datos del API en servicios', data)
+    return data;
+    } catch(error){
+        console.log('no funciona la comunicacion con el backend')
+    } 
+   }
+
 //conexion entre front y end de guardar datos de consulta
 
 export function GuardarConsulta(datos){

@@ -6,14 +6,14 @@ import { CrearClientes } from './CrearClientes'
 import { ListadoClientes } from './ListadoClientes'
 import { RegistroUsuario } from './RegistroUsuario'
 import { CrearAbogado } from './AgregarAbogado'
-
+import BackgroundVideo from './BackgroundVideo'
 
 export function PrincipalAdmin() {
     return (
       <>
+
       <NavBarAdmin/>
         <div className="App">
-          <h1>PAGINA PRINCIPAL ADMIN</h1>
         </div>
         <div>
         <div className='container'>

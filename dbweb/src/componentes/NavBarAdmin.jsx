@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export function NavBarAdmin(){
 
@@ -22,13 +23,13 @@ export function NavBarAdmin(){
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/PrincipalAdmin">Inicio</a>
+                <Link className="nav-link active" aria-current="page" to="/PrincipalAdmin">Inicio</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/listarClientes">Clientes</a>
+                <Link className="nav-link" to="/listarClientes">Clientes</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/abogadosadmin">Abogados</a>
+                <Link className="nav-link" to="/abogadosadmin">Abogados</Link>
               </li>
             </ul>
           </div>

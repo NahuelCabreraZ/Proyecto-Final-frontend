@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useState } from "react"
 import * as API from '../servicios/servicios'
-import { NavBar } from "./NavBar";
+import Table from "react-bootstrap/Table";
 
 
 export function ListadoAbogados(){
@@ -16,8 +16,8 @@ export function ListadoAbogados(){
         <>
        <div className="card">
         <div className="card-header">Lista de Abogados disponibles</div>
-       <div className="card-body"> 
-        <table className="table">
+       <div className="table-responsive"> 
+        <Table striped bordered hover>
             <thead>
                 <tr>
                     <th >Id</th>
@@ -45,10 +45,10 @@ export function ListadoAbogados(){
                 ))}
 
             </tbody>
-        </table>
+        </Table>
         </div>
         </div>
         </>
-    )
+    );
 
 }

@@ -8,7 +8,9 @@ import { ListadoClientes } from './componentes/ListadoClientes'
 import { Login } from './componentes/Login'
 import { NavBar } from './componentes/NavBar'
 import { PrincipalAdmin } from './componentes/PrincipalAdmin'
-
+import BackgroundVideo from './componentes/BackgroundVideo'
+import './App.css'
+import BackgroundVideoMain from './componentes/BackgroundVideoMain'
 
 
 function App() {
@@ -27,16 +29,23 @@ function App() {
 
   return (
     <>
-    {
+    <div>
+          {
 
-      !sesion?
-      <Principal/>:
-      <PrincipalAdmin/>
+            !sesion?
+            <>
+            <div><BackgroundVideo/></div>
+            <div><Principal/></div>
+            </>
+            :
+            <>
+            <div><BackgroundVideoMain/></div>
+            <div><PrincipalAdmin/></div>
+            
+            </>
 
-      
-
-    }
-
+          }
+    </div>
 
 
     </>

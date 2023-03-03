@@ -30,9 +30,9 @@ const send_form = async(event)=>{
 
     return(
         <>
-        <div className="card-body">
+        <div className="card">
 
-                <div className="container">
+            <div className="container">
                 <form onSubmit={send_form}>
                 <h1 className="h3 mb-3 fw-normal">Iniciar Sesión</h1>
                 {

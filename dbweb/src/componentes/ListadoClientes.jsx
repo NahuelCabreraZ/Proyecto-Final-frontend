@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { useState } from "react"
 import * as API from '../servicios/servicios'
+import { Link } from "react-router-dom";
 
 export function ListadoClientes(){
 
@@ -31,29 +32,53 @@ export function ListadoClientes(){
             setMensajeError(user.mensaje)
             setTimeout(()=>{
                 setMensajeError('')
-            }, 4000)
+            }, 3000)
         }
     }
         ///////////////////////////
 
         // FUNCION ALTA DE CLIENTE//
 
+        const altaCliente = async(id)=>{
+            console.log("el id que vamos a dar de alta es el...",id)
+    
+            const user = await API.AltaCliente(id)
+            console.log('guarda el id en user?', user)
+            
+            if(user.status){
+    
+                setMensajeError(user.mensaje)
+                setTimeout(()=>{
+                    setMensajeError('')
+                    window.location.reload(true);
+                }, 4000)
+    
+            }else{
+                setMensajeError(user.mensaje)
+                setTimeout(()=>{
+                    setMensajeError('')
+                }, 3000)
+            }
+        }
+
         ///////////////////////////
 
     return (
+        <>
+        <div className="container">
        <div className="card">
         <div className="card-header">
             Lista de Clientes Activos
         </div>
                 {
                     MensajeError?
-                    <div className="alert alert-succes" role="alert">
+                    <div className="alert alert-success" role="alert">
                      {MensajeError}
                     </div>
                     :('')
 
                 }
-       <div className="card-body"> 
+       <div className="table-responsive"> 
         <table className="table">
             <thead>
                 <tr>
@@ -64,6 +89,7 @@ export function ListadoClientes(){
                     <th>Email</th>
                     <th>Telefono</th>
                     <th>Domicilio</th>
+                    <th>Estado</th>
                     <th>ACCIONES</th>
                 </tr>
             </thead>
@@ -79,20 +105,26 @@ export function ListadoClientes(){
                         <td>{cliente.email}</td>
                         <td>{cliente.telefono}</td>
                         <td>{cliente.domicilio}</td>
+                        <td>{cliente.estado}</td>
                         <td>
                             <div className="btn-group" role="group" aria-label="">
                                <button onClick={() => bajaCliente(cliente.idclientes)} type="button" className="btn btn-danger">Dar de Baja</button>
+                            </div>
+                            <div className="btn-group" role="group" aria-label="">
+                               <button onClick={() => altaCliente(cliente.idclientes)} type="button" className="btn btn-success">Dar de Alta</button>
                             </div>
                         </td>
                     </tr>
                 ))}
                 <div className="card-footer text-muted" > Agregar Cliente
-                    <ul><a name="" id="" class="btn btn-primary" href="/crearClientes" role="button">+</a></ul>
+                    <ul><Link name="" id="" class="btn btn-primary" to="/crearClientes" role="button">+</Link></ul>
                 </div>
             </tbody>
         </table>
         </div>
         </div>
+        </div>
+        </>
     )
 
 }
