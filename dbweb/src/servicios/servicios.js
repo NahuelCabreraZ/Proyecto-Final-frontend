@@ -28,6 +28,21 @@ export async function getClientes(){
     }
 }
 
+//trae a los clientes por ID de la base de datos por el metodo get
+
+export async function getClientesById(id_clientes){
+    try{
+
+        const response = await fetch(`${API_URL}/clientes/${id_clientes}`);
+        const data = await response.json();
+        console.log('ServiciosJS',data)
+        return data[0];
+    
+    }catch(error){
+        console.log('Nuestro error es ', error);
+    }
+}
+
 //ALTA y BAJA DE CLIENTES
 
 export async function BajaCliente(id_clientes){

@@ -1,7 +1,9 @@
 import React, { useEffect } from "react"
 import { useState } from "react"
 import * as API from '../servicios/servicios'
-
+import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import './ListadoAbogadosAdmin.css'
 export function ListadoAbogadosAdmin(){
 
     const [abogados, setAbogados] = useState([]);
@@ -12,13 +14,10 @@ export function ListadoAbogadosAdmin(){
 
     return (
         <>
-       <div className="card">
-        <div className="card-header">Lista de Abogados disponibles</div>
-       <div className="card-body"> 
-        <table className="table">
+         <div className="table-responsive">
+            <Table className="table">
             <thead>
                 <tr>
-                    <th >Id</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>email</th>
@@ -28,7 +27,6 @@ export function ListadoAbogadosAdmin(){
             <tbody>
                 {abogados.map((abogado) => (
                     <tr>
-                        <td scope="row">{abogado.idabogados}</td>
                         <td>{abogado.nombre}</td>
                         <td>{abogado.apellido}</td>
                         <td>{abogado.email}</td>
@@ -38,14 +36,13 @@ export function ListadoAbogadosAdmin(){
                     </tr>
                 ))}
             
-                <div className="card-footer text-muted" >
-                    <ul><a name="" id="" class="btn btn-primary" href="/registroUsuario" role="button">Agregar Login para Abogados</a></ul>
-                    <ul><a name="" id="" class="btn btn-primary" href="/agregarabogado" role="button">Agregar Abogado</a></ul>
+                <div className="button-container" >
+                    <ul><Link name="" id="" class="btn btn-primary" to="/registroUsuario" role="button">Agregar Login para Abogados</Link></ul>
+                    <ul><Link name="" id="" class="btn btn-primary" to="/agregarabogado" role="button">Agregar Abogado</Link></ul>
                 </div>
 
             </tbody>
-        </table>
-        </div>
+            </Table>
         </div>
         </>
     )

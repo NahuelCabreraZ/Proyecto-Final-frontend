@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useState } from "react"
 import * as API from '../servicios/servicios'
 import Table from "react-bootstrap/Table";
+import { Link } from "react-router-dom";
 
 
 export function ListadoAbogados(){
@@ -17,10 +18,9 @@ export function ListadoAbogados(){
        <div className="card">
         <div className="card-header">Lista de Abogados disponibles</div>
        <div className="table-responsive"> 
-        <Table striped bordered hover>
+        <Table className="table">
             <thead>
                 <tr>
-                    <th >Id</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>email</th>
@@ -31,14 +31,13 @@ export function ListadoAbogados(){
             <tbody>
                 {abogados.map((abogado) => (
                     <tr>
-                        <td scope="row">{abogado.idabogados}</td>
                         <td>{abogado.nombre}</td>
                         <td>{abogado.apellido}</td>
                         <td>{abogado.email}</td>
                         <td>{abogado.telefono}</td>
                         <td>
                             <div className="btn-group" role="group" aria-label="">
-                                <a name="" id="" className="btn btn-secondary" href="/contacto" role="button">CONTACTAR</a>
+                                <Link name="" id="" className="btn btn-secondary" to="/contacto" role="button">CONTACTAR</Link>
                             </div>
                         </td>
                     </tr>

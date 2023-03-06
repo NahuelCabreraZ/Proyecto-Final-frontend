@@ -1,4 +1,4 @@
-import {NavBarAdmin} from './NavBarAdmin'
+import {NavBarBootstrapAdmin} from './NavBarBootstrapAdmin'
 import { Route, Routes } from 'react-router-dom'
 import { ListadoAbogadosAdmin } from './ListadoAbogadosAdmin'
 import { CrearConsulta } from './CrearConsulta'
@@ -7,12 +7,13 @@ import { ListadoClientes } from './ListadoClientes'
 import { RegistroUsuario } from './RegistroUsuario'
 import { CrearAbogado } from './AgregarAbogado'
 import BackgroundVideo from './BackgroundVideo'
+import { EditarCliente } from './EditarCliente'
 
 export function PrincipalAdmin() {
     return (
       <>
 
-      <NavBarAdmin/>
+      <NavBarBootstrapAdmin/>
         <div className="App">
         </div>
         <div>
@@ -31,6 +32,8 @@ export function PrincipalAdmin() {
         <Route path='/registroUsuario' element = {<RegistroUsuario/>}></Route>
 
         <Route path='/agregarabogado' element = {<CrearAbogado/>}></Route>
+
+        <Route path='/editarcliente/:idclientes' element = {<EditarCliente/>}></Route>
 
         </Routes>
     

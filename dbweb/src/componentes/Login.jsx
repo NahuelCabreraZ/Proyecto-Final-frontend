@@ -40,28 +40,26 @@ const send_form = async(event)=>{
                     :('')
 
                 }
-                <div>
-                        <div className="login-header">
-                            <h1>Bienvenido!</h1>
-                        </div>
-                <div className="login-form-container">
-                <Form onSubmit={send_form}>
-                    <Form.Group controlId="formBasicEmail" className="form-group-small">
-                        <Form.Label className="my-label">Nombre de Usuario</Form.Label>
-                        <Form.Control type="text" placeholder="" value={user} onChange={(event) => setUser(event.target.value)} />
-                    </Form.Group>
+                <div className="login-page">
+                    <div className="login-form-container">
+                        <h1>Bienvenido!</h1>
+                        <Form onSubmit={send_form}>
+                            <Form.Group controlId="formBasicEmail" className="form-group-small">
+                                <Form.Label className="my-label">Nombre de Usuario</Form.Label>
+                                <Form.Control type="text" placeholder="" value={user} onChange={(event) => setUser(event.target.value)} />
+                            </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword" className="form-group-small">
-                        <Form.Label className="my-label">Password</Form.Label>
-                        <Form.Control type="password" placeholder="" value={password} onChange={(event) => setPassword(event.target.value)} />
-                    </Form.Group>
-                    <Form.Group className="form-group-center">
-                    <Button variant="primary" type="submit">
-                        Iniciar Sesion
-                    </Button>
-                    </Form.Group>
-                </Form>
-                </div>
+                            <Form.Group controlId="formBasicPassword" className="form-group-small">
+                                <Form.Label className="my-label">Password</Form.Label>
+                                <Form.Control type="password" placeholder="" value={password} onChange={(event) => setPassword(event.target.value)} />
+                            </Form.Group>
+                            <Form.Group className="form-group-center">
+                            <Button variant="primary" type="submit">
+                                Iniciar Sesion
+                            </Button>
+                            </Form.Group>
+                        </Form>
+                    </div>
                 </div>
 
       </>

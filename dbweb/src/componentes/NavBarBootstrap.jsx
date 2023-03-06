@@ -6,7 +6,7 @@ export function NavBarBootstrap() {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Navbar.Brand href="#home">C-C</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="mr-auto" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/">Inicio</Nav.Link>

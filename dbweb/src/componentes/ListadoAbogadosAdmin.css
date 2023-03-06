@@ -1,0 +1,51 @@
+.table {
+    background-color: #121965; /* Cambia el color de fondo a lo que prefieras */
+    position: relative;
+    transform: translateY(10%);
+    max-width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    color: #ffffff; /* Cambia el color del texto a lo que prefieras */
+  }
+  
+  .table {
+    border-radius: 10px; /* Cambia el valor de "border-radius" según lo que desees */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #224e72; /* Cambia el color de fondo "hover" a lo que prefieras */
+  }
+  
+  .table-responsive {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  .table-responsive::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.2);
+    border-radius: 5px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button-container ul {
+    margin: 0 10px;
+  }
+  

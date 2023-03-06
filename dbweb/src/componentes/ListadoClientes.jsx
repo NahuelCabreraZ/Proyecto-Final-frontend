@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useState } from "react"
 import * as API from '../servicios/servicios'
 import { Link } from "react-router-dom";
-
+import { EditarCliente } from "./EditarCliente";
 export function ListadoClientes(){
 
     const [clientes, setClientes] = useState([]);
@@ -107,17 +107,23 @@ export function ListadoClientes(){
                         <td>{cliente.domicilio}</td>
                         <td>{cliente.estado}</td>
                         <td>
+                            { (cliente.estado==="A")?
                             <div className="btn-group" role="group" aria-label="">
                                <button onClick={() => bajaCliente(cliente.idclientes)} type="button" className="btn btn-danger">Dar de Baja</button>
                             </div>
+                            :
                             <div className="btn-group" role="group" aria-label="">
                                <button onClick={() => altaCliente(cliente.idclientes)} type="button" className="btn btn-success">Dar de Alta</button>
                             </div>
+                            }
+                        </td>
+                        <td>
+                            <Link to={`/editarcliente/${cliente.idclientes}`}><button className="btn btn-warning" type="button">Editar</button></Link>
                         </td>
                     </tr>
                 ))}
-                <div className="card-footer text-muted" > Agregar Cliente
-                    <ul><Link name="" id="" class="btn btn-primary" to="/crearClientes" role="button">+</Link></ul>
+                <div className="card-footer text-muted" >
+                    <ul><Link name="" id="" class="btn btn-primary" to="/crearClientes" role="button">Agregar Cliente</Link></ul>
                 </div>
             </tbody>
         </table>
