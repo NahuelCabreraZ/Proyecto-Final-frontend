@@ -43,6 +43,19 @@ export async function getClientesById(id_clientes){
     }
 }
 
+//Edita a los clientes por ID
+
+export function EditarCliente(idclientes, datos){
+    const jsonTextInput = {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(datos)
+    };
+        fetch(`${API_URL}/clientes/${idclientes}`, jsonTextInput)
+   }
+
 //ALTA y BAJA DE CLIENTES
 
 export async function BajaCliente(id_clientes){
