@@ -14,7 +14,6 @@ export function Principal() {
       </div>
       <Routes>
       <Route path='/abogados' element = {<ListadoAbogados/>}></Route>
-
       <Route path='/contacto' element = {<CrearConsulta/>}></Route>
       <Route path='/login' element = {<Login/>}></Route>
       </Routes>

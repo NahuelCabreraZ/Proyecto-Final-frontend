@@ -7,14 +7,51 @@ import './ListadoAbogadosAdmin.css'
 export function ListadoAbogadosAdmin(){
 
     const [abogados, setAbogados] = useState([]);
+    const [MensajeError, setMensajeError] = useState('');
 
     useEffect(() =>{
         API.getAbogados().then(setAbogados)
     }, [])
 
+    const eliminar_abogado = async(id)=>{
+        console.log("el id que vamos a eliminar de baja es el...",id)
+
+        const user = await API.EliminarAbogado(id)
+        console.log('guarda el id en user?', user)
+        
+        if(user.status){
+
+            setMensajeError(user.mensaje)
+            setTimeout(()=>{
+                setMensajeError('')
+                window.location.reload(true);
+            }, 4000)
+
+        }else{
+            setMensajeError(user.mensaje)
+            setTimeout(()=>{
+                setMensajeError('')
+                window.location.reload(true);
+            }, 3000)
+        }
+    }
+
     return (
         <>
+        <div className="card">
+            <div className="card-header">
+                <h1 className="titulito">Lista de Abogados</h1>
+                {
+                    MensajeError?
+                    <div className="alert alert-success" role="alert">
+                     {MensajeError}
+                    </div>
+                    :('')
+
+                }
+            </div>
          <div className="table-responsive">
+
             <Table className="table">
             <thead>
                 <tr>
@@ -22,16 +59,18 @@ export function ListadoAbogadosAdmin(){
                     <th>Apellido</th>
                     <th>email</th>
                     <th>Telefono</th>
+                    <th>ACCIONES</th>
                 </tr>
             </thead>
             <tbody>
                 {abogados.map((abogado) => (
-                    <tr>
+                    <tr key={abogado.idabogados}>
                         <td>{abogado.nombre}</td>
                         <td>{abogado.apellido}</td>
                         <td>{abogado.email}</td>
                         <td>{abogado.telefono}</td>
                         <td>
+                            <button onClick={() => eliminar_abogado(abogado.idabogados)} className="btn btn-danger" type="button" role="button">ELIMINAR</button>
                         </td>
                     </tr>
                 ))}
@@ -43,6 +82,7 @@ export function ListadoAbogadosAdmin(){
 
             </tbody>
             </Table>
+            </div>
         </div>
         </>
     )

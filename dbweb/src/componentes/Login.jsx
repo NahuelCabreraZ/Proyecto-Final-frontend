@@ -17,7 +17,8 @@ const send_form = async(event)=>{
     
     if(usuario.status){
         console.log('se logeo correctamente')
-        window.localStorage.setItem('saveUsuario', JSON.stringify(usuario))
+        window.localStorage.setItem('saveUsuario', JSON.stringify(usuario));
+        window.localStorage.setItem('token', JSON.stringify(usuario.token));
         setSesion(sesion)
         setUser('')
         setPassword('')

@@ -162,3 +162,23 @@ export async function Login(datos){
         fetch(`${API_URL}/insertarabogados`, jsonTextInput)
    }
 
+   //ELIMINAR A UN ABOGADO DE LA BASE DE DATOS
+   export async function EliminarAbogado(idabogados){
+    const token = JSON.parse(localStorage.getItem('token'))
+    const jsonTextInput = {
+       method: 'DELETE',
+       headers: {
+           'Content-Type': 'application/json',
+           Authorization : `Bearer ${token}`,
+       }
+    };
+    console.log('Guarda en servicios el idabogados?',idabogados)
+    try{
+    const response = await fetch(`${API_URL}/abogados/${idabogados}`, jsonTextInput);
+    const data = await response.json();
+    console.log('datos del API en servicios', data)
+    return data;
+    } catch(error){
+        console.log('no funciona la comunicacion con el backend')
+    } 
+   }

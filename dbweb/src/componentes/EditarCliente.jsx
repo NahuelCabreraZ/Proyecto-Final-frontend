@@ -68,50 +68,50 @@ const enviarInputText = {
           :''
         }
         
-      <div>
+      <form onSubmit={editar_cliente}>
 
         <div className="form-group">
           <label for="">Numero de Documento</label>
-          <input type="text" ref={refClienteDNI} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+          <input required type="text" ref={refClienteDNI} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
           <small id="helpId" className="text-muted">Sin puntos, solo numeros</small>
         </div>
 
         <div className="form-group">
           <label for="">Nombre</label>
-          <input type="text" ref={refClienteNombre} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+          <input required type="text" ref={refClienteNombre} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
           <small id="helpId" className="text-muted"></small>
         </div>
 
         <div className="form-group">
           <label for="">Apellido</label>
-          <input type="text" ref={refClienteApellido} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+          <input required type="text" ref={refClienteApellido} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
           <small id="helpId" className="text-muted"></small>
         </div>
 
         <div className="form-group">
           <label for="">Correo Electronico</label>
-          <input type="text" ref={refClienteEmail} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+          <input required type="text" ref={refClienteEmail} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
           <small id="helpId" className="text-muted"></small>
         </div>
 
         <div className="form-group">
           <label for="">Telefono</label>
-          <input type="text" ref={refClienteTel} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+          <input required type="text" ref={refClienteTel} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
           <small id="helpId" className="text-muted"></small>
         </div>
         
         <div className="form-group">
           <label for="">Domicilio</label>
-          <input type="text" ref={refClienteDom} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+          <input required="required" type="text" ref={refClienteDom} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
           <small id="helpId" className="text-muted"></small>
         </div>
 
         <div className="form-group">
-          <button onClick={editar_cliente} type="button" className="btn btn-primary">Editar Curso</button>
+          <button type="submit" className="btn btn-primary">Editar Cliente</button>
           <Link to={'/listarClientes'}><button type="button" className="btn btn-secondary">Volver al Inicio</button></Link>
         </div>
 
-      </div>
+      </form>
 
 
 
