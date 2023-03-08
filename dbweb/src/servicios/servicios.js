@@ -14,6 +14,21 @@ export async function getAbogados(){
     }
 }
 
+//trae a los abogados por su ID
+
+export async function getAbogadosById(id_abogados){
+    try{
+
+        const response = await fetch(`${API_URL}/abogados/${id_abogados}`);
+        const data = await response.json();
+        console.log('ServiciosJS',data)
+        return data[0];
+    
+    }catch(error){
+        console.log('Nuestro error es ', error);
+    }
+}
+
 
 //trae a los clientes de la base de datos por el metodo get
 export async function getClientes(){
@@ -136,6 +151,19 @@ export async function Login(datos){
        body: JSON.stringify(datos)
     };
         fetch(`${API_URL}/insertarclientes`, jsonTextInput)
+   }
+
+   //variante mejorada
+
+   export function GuardarClienteSsj(datos){
+    const jsonTextInput = {
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(datos)
+    };
+        fetch(`${API_URL}/insertclients`, jsonTextInput)
    }
 
    //conexion entre front y end para insertar usuario nuevo

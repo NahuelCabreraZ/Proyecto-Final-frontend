@@ -1,7 +1,8 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom"
 import * as API from '../servicios/servicios'
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 export function CrearConsulta() {
 
 const consulta = useRef();
@@ -10,6 +11,15 @@ const consulta2 = useRef();
 const consulta3 = useRef();
 const consulta4 = useRef();
 const consulta5 = useRef();
+
+const [datos_consulta, setDatosConsulta] = useState('');
+const {idabogados} = useParams();
+const [mensajeExito, setMensajeExito] = useState('')
+console.log('el parametro que me llega desde el Listado de Clientes es: ', idabogados)
+
+useEffect(() =>{
+  API.getAbogadosById(idabogados).then(setDatosConsulta)
+}, [idabogados])
 
 const guardar_consulta = ()=>{
     console.log('Llama a la funcion correctamente')
@@ -28,74 +38,77 @@ const enviarInputText = {
   domicilio: textInput4,
   telefono: textInput5,
   texto: textInput6,
-  abogado_vinculado: 1
+  abogado_vinculado: idabogados
 }
     
     console.log(enviarInputText)
     API.GuardarConsulta(enviarInputText);
     consulta.current.value=null;
-    alert('Se guardo correctamente la consulta. Gracias');
+    setMensajeExito('Se guardo la consulta correctamente')
+      setTimeout(()=>{
+        setMensajeExito('');
+        window.location.reload(true)
+      }, 3000)
 
 }
 
     return (
       <div className="card">
-              <div className="card-header">Creacion de Consulta</div>
+        <div className="card-header">Consultar a || Abogado: {datos_consulta.apellido + ' ' + datos_consulta.nombre}</div>
             
             
             <div className="card-body">
+
+              {
+              mensajeExito?
+              <div className="alert alert-success" role="alert">{mensajeExito}</div>
+              :''
+              }
             
-            <div>
+            <form onSubmit={guardar_consulta}>
 
               <div className="form-group">
                 <label for="">Numero de Documento</label>
-                <input type="text" ref={consulta} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+                <input required type="number" ref={consulta} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
                 <small id="helpId" className="text-muted">Sin Puntos</small>
               </div>
 
               <div className="form-group">
                 <label for="">Nombre</label>
-                <input type="text" ref={consulta1} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+                <input required type="text" ref={consulta1} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
                 <small id="helpId" className="text-muted"></small>
               </div>
 
               <div className="form-group">
                 <label for="">Apellido</label>
-                <input type="text" ref={consulta2} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+                <input required type="text" ref={consulta2} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
                 <small id="helpId" className="text-muted"></small>
               </div>
 
               <div className="form-group">
                 <label for="">domicilio</label>
-                <input type="text" ref={consulta3} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+                <input required type="text" ref={consulta3} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
                 <small id="helpId" className="text-muted"></small>
               </div>
 
               <div className="form-group">
                 <label for="">telefono</label>
-                <input type="text" ref={consulta4} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+                <input required type="number" ref={consulta4} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
                 <small id="helpId" className="text-muted"></small>
               </div>
 
               <div className="form-group">
                 <label for="">Consulta</label>
-                <input type="text" ref={consulta5} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
+                <input required type="text" ref={consulta5} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
                 <small id="helpId" className="text-muted"></small>
               </div>
 
-              <select className="form-select" aria-label="Default select example">
-                <option selected>Abogado Vinculado</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-
               <div className="form-group">
-                <button onClick={guardar_consulta} type="button" className="btn btn-primary">Guardar Consulta</button>
+                <button type="submit" className="btn btn-primary">Guardar Consulta</button>
                 <Link to={'/abogados'}><button type="button" className="btn btn-secondary">Volver al Inicio</button></Link>
               </div>
 
-            </div>
+            </form>
 
  
 

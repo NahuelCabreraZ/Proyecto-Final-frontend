@@ -30,14 +30,14 @@ export function ListadoAbogados(){
             </thead>
             <tbody>
                 {abogados.map((abogado) => (
-                    <tr>
+                    <tr key={abogado.idabogados}>
                         <td>{abogado.nombre}</td>
                         <td>{abogado.apellido}</td>
                         <td>{abogado.email}</td>
                         <td>{abogado.telefono}</td>
                         <td>
                             <div className="btn-group" role="group" aria-label="">
-                                <Link name="" id="" className="btn btn-secondary" to="/contacto" role="button">CONTACTAR</Link>
+                            <Link to={`/contacto/${abogado.idabogados}`}><button className="btn btn-secondary" type="button">CONTACTAR</button></Link>
                             </div>
                         </td>
                     </tr>
