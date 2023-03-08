@@ -14,7 +14,7 @@ export function CrearClientes() {
   //Trae los abogados para desplegarlos en las opciones del select de abajo
 
   const [abogados, setAbogados] = useState([]);
-  const [selector, setSelector] = useState('');
+  const [selector, setSelector] = useState([]);
 
 
 
@@ -34,6 +34,7 @@ export function CrearClientes() {
   const textInput5 = consulta4.current.value;
   const textInput6 = consulta5.current.value;
   const textInput7 = selector;
+  const textInput8 = parseInt(textInput7)
       console.log("selector", selector)
       console.log('lo que está en el text input7 es ', textInput7)
   const enviarInputText = {
@@ -43,7 +44,7 @@ export function CrearClientes() {
     email: textInput4,
     telefono: textInput5,
     domicilio: textInput6,
-    abogado_bond: textInput7 
+    abogado_bond: textInput8 
   }
       console.log("envia el json: ",enviarInputText)
       API.GuardarClienteSsj(enviarInputText);
@@ -98,9 +99,9 @@ export function CrearClientes() {
                 
                 <div>
 
-                <select value={selector} onChange={(event) => setSelector(parseInt(event.target.value))}>
+                <select onChange={(event) => setSelector(parseInt(event.target.value))}>
                   {abogados.map((abogado) => (
-                    <option key={abogado.idabogados} value={abogado.idabogados} >{abogado.idabogados} {abogado.nombre} {abogado.apellido}</option>
+                    <option key={abogado.idabogados} value={abogado.idabogados} >{abogado.nombre} {abogado.apellido}</option>
                   ))}
                 </select>
 
