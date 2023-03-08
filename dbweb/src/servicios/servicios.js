@@ -210,3 +210,55 @@ export async function Login(datos){
         console.log('no funciona la comunicacion con el backend')
     } 
    }
+
+   //Trae las consultas para mostrarlas en el componente ConsultasAdmin.jsx
+
+   export async function getConsultas(){
+    try{
+
+        const response = await fetch(`${API_URL}/consultas`);
+        const data = await response.json();
+        return data;
+    
+    }catch(error){
+        console.log('Nuestro error es ', error);
+    }
+}
+
+//Marca como leido la consulta
+
+export async function marcaLeido(id_consultas){
+    const jsonTextInput = {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       }
+    }
+    console.log('Guarda en servicios el id_cliente?',id_consultas)
+    try{
+    const response = await fetch(`${API_URL}/leidoconsultas/${id_consultas}`, jsonTextInput);
+    const data = await response.json();
+    console.log('datos del API en servicios', data)
+    return data;
+    } catch(error){
+        console.log('no funciona la comunicacion con el backend')
+    } 
+   }
+
+   export async function marcaNoLeido(id_consultas){
+    const jsonTextInput = {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       }
+    }
+    console.log('Guarda en servicios el id_cliente?',id_consultas)
+    try{
+    const response = await fetch(`${API_URL}/noleidoconsultas/${id_consultas}`, jsonTextInput);
+    const data = await response.json();
+    console.log('datos del API en servicios', data)
+    return data;
+    } catch(error){
+        console.log('no funciona la comunicacion con el backend')
+    } 
+   }
