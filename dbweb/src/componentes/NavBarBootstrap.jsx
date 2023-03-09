@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 export function NavBarBootstrap() {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">C-C</Navbar.Brand>
+      <Navbar.Brand href=""><img src="/img/logo-small.png" width="40" height="40" alt=""/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="mr-auto" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
