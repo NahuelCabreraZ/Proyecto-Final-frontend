@@ -118,6 +118,8 @@ const enviarInputText = {
 
 
           <div className="card-footer text muted">
+            <p>Precio de Consulta: $5.000 || aliasMP: nahu.octa.cz</p><br />
+            <p>Enviar comprobante a cabrera.nahueloctavio@gmail.com</p>
           </div>
 
       </div>
