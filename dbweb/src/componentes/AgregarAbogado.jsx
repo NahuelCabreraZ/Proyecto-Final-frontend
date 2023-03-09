@@ -37,7 +37,7 @@ export function CrearAbogado() {
       return (
         <>
         <div className="card">
-                <div className="card-header">Creacion de Consulta</div>
+                <div className="card-header">Nuevo Abogado</div>
               
               
               <div className="card-body">
