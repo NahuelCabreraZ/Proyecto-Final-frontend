@@ -28,6 +28,7 @@ export function NavBarBootstrapAdmin() {
           <Nav.Link href="/listarClientes">Clientes</Nav.Link>
           <Nav.Link href="/abogadosadmin">Abogados</Nav.Link>
           <Nav.Link href="/consultas">Consultas</Nav.Link>
+          <Nav.Link href="/vistamagica">Relaciones</Nav.Link>
         </Nav>
       </Navbar.Collapse>
         <div className="container">

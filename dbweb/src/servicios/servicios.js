@@ -262,3 +262,16 @@ export async function marcaLeido(id_consultas){
         console.log('no funciona la comunicacion con el backend')
     } 
    }
+
+   // VISTA DE ABOGADOS Y CLIENTES RELACIONADOS
+   export async function getVista(){
+    try{
+
+        const response = await fetch(`${API_URL}/vistarelacion`);
+        const data = await response.json();
+        return data;
+    
+    }catch(error){
+        console.log('Nuestro error es ', error);
+    }
+}

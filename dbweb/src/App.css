@@ -42,6 +42,8 @@ padding-left: 1%;
   transform: translateY(10%);
   padding-left: 1%;
   padding-right: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
 
 .cartacabeza {
@@ -67,8 +69,7 @@ padding-left: 1%;
 .titulito1{
   color: white;
   animation: brillo 3s infinite;
-  padding-left: 30%;
-  padding-top: 1%;
+  text-align: center;
 }
 
 .carta1 {

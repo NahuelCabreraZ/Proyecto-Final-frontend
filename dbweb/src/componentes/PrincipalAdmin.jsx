@@ -9,6 +9,7 @@ import { CrearAbogado } from './AgregarAbogado'
 import BackgroundVideo from './BackgroundVideo'
 import { EditarCliente } from './EditarCliente'
 import { ListaConsultas } from './ConsultasAdmin'
+import { AbogadosvsClientes } from './AbogadosvsClientes'
 
 export function PrincipalAdmin() {
     return (
@@ -37,6 +38,8 @@ export function PrincipalAdmin() {
         <Route path='/editarcliente/:idclientes' element = {<EditarCliente/>}></Route>
 
         <Route path='/consultas' element = {<ListaConsultas/>}></Route>
+
+        <Route path='/vistamagica' element = {<AbogadosvsClientes/>}></Route>
 
         </Routes>
     

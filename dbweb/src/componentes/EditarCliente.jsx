@@ -56,11 +56,13 @@ const enviarInputText = {
 
 
     return(
-        <div className="card">
-        <div className="card-header">Edicion de Clientes || Nombre del Cliente: {datos_clientes.apellido + ' ' + datos_clientes.nombre}</div>
+        <div className="carta">
+        <div className="cartacabeza">
+          <h1 className="titulito1">Edicion de Clientes: {datos_clientes.apellido + ' ' + datos_clientes.nombre}</h1>
+        </div>
       
       
-      <div className="card-body">
+      <div className="cartacuerpo">
 
         {
           mensajeExito?
@@ -73,37 +75,37 @@ const enviarInputText = {
         <div className="form-group">
           <label for="">Numero de Documento</label>
           <input required type="text" ref={refClienteDNI} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-          <small id="helpId" className="text-muted">Sin puntos, solo numeros</small>
+          <small id="helpId" className="textito">Sin puntos, solo numeros</small>
         </div>
 
         <div className="form-group">
           <label for="">Nombre</label>
           <input required type="text" ref={refClienteNombre} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-          <small id="helpId" className="text-muted"></small>
+          <small id="helpId" className="textito"></small>
         </div>
 
         <div className="form-group">
           <label for="">Apellido</label>
           <input required type="text" ref={refClienteApellido} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-          <small id="helpId" className="text-muted"></small>
+          <small id="helpId" className="textito"></small>
         </div>
 
         <div className="form-group">
           <label for="">Correo Electronico</label>
           <input required type="text" ref={refClienteEmail} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-          <small id="helpId" className="text-muted"></small>
+          <small id="helpId" className="textito"></small>
         </div>
 
         <div className="form-group">
           <label for="">Telefono</label>
           <input required type="text" ref={refClienteTel} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-          <small id="helpId" className="text-muted"></small>
+          <small id="helpId" className="textito"></small>
         </div>
         
         <div className="form-group">
           <label for="">Domicilio</label>
           <input required="required" type="text" ref={refClienteDom} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-          <small id="helpId" className="text-muted"></small>
+          <small id="helpId" className="textito"></small>
         </div>
 
         <div className="form-group">

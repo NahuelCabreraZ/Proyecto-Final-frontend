@@ -20,7 +20,7 @@
   }
   
   .table tbody tr:hover {
-    background-color: #1B2349; /* Cambia el color de fondo "hover" a lo que prefieras */
+    background-color: #747fb4; /* Cambia el color de fondo "hover" a lo que prefieras */
   }
   
   .table-responsive {
@@ -32,12 +32,12 @@
   }
   
   .table-responsive::-webkit-scrollbar-thumb {
-    background-color: whitesmoke(0,0,0,.2);
+    background-color:#747fb4(0,0,0,.2);
     border-radius: 1px;
   }
   
   .table-responsive::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: #747fb4;
     border-radius: 1px;
   }
   
@@ -49,4 +49,24 @@
   .button-container ul {
     margin: 0 10px;
   }
+
+  /* Estilo para scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #271568;
+  border-radius: 10px;
+  border: 3px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #796edd;
+}
   
