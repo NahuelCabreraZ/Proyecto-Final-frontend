@@ -18,8 +18,9 @@ export function NavBarBootstrapAdmin() {
     
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
-      <Navbar.Brand href=""><img src="/img/logo-small.png" width="40" height="40" alt=""/></Navbar.Brand>
+
+    <Navbar className="barrita" variant="dark" expand="lg">
+      <Navbar.Brand className="loguito" href=""><img src="/img/logo-small.png" width="40" height="40" alt=""/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="mr-auto" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

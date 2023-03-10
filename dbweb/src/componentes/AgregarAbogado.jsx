@@ -36,11 +36,13 @@ export function CrearAbogado() {
   
       return (
         <>
-        <div className="card">
-                <div className="card-header">Nuevo Abogado</div>
+        <div className="carta">
+                <div className="cartacabeza">
+                  <h1 className="titulito1">Nuevo Abogado</h1>
+                </div>
               
               
-              <div className="card-body">
+              <div className="cartacuerpo">
               
               <form onSubmit={guardar_abogado}>
   
@@ -76,7 +78,7 @@ export function CrearAbogado() {
                 
   
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary">Guardar Consulta</button>
+                  <button type="submit" className="btn btn-primary">Crear Abogado</button>
                   <Link to={'/abogadosadmin'}><button type="button" className="btn btn-secondary">Volver al Inicio</button></Link>
                 </div>
   

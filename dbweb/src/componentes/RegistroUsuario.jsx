@@ -28,11 +28,13 @@ export function RegistroUsuario() {
   
       return (
         <>
-        <div className="card">
-                <div className="card-header">Creacion de Usuarios</div>
+        <div className="carta">
+                <div className="cartacabeza">
+                <h1 className="titulito1">Nuevo Login</h1>
+                </div>
               
               
-        <div className="card-body">
+        <div className="cartacuerpo">
               
             <form onSubmit={guardar_usuario}>
                 <div className="form-group">

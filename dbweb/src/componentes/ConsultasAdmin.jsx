@@ -45,8 +45,10 @@ export function ListaConsultas(){
 
     return (
         <>
-       <div className="card">
-        <div className="card-header">Consultas</div>
+       <div className="carta">
+        <div className="cartacabeza">
+            <h1 className="titulito">Consultas</h1>
+        </div>
        <div className="table-responsive"> 
         <Table className="table">
             <thead>
@@ -76,11 +78,11 @@ export function ListaConsultas(){
                         
                         { (consulta.leido==="no")?
                         <div className="btn-group" role="group" aria-label="">
-                        <button onClick={() => marcarLeido(consulta.idconsultas)} type="button" className="btn btn-success">marcar como leído</button>
+                        <button onClick={() => marcarLeido(consulta.idconsultas)} type="button" className="badge-primary">marcar como leído</button>
                         </div>
                         :
                         <div className="btn-group" role="group" aria-label="">
-                        <button onClick={() => marcarNoLeido(consulta.idconsultas)} type="button" className="btn btn-success">marcar como no leido</button>
+                        <button onClick={() => marcarNoLeido(consulta.idconsultas)} type="button" className="badge-primary">marcar como no leido</button>
                         </div>
                         }
                         

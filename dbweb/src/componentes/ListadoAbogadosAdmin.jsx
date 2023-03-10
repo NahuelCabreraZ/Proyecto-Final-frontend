@@ -38,9 +38,9 @@ export function ListadoAbogadosAdmin(){
 
     return (
         <>
-        <div className="card">
-            <div className="card-header">
-                <h1 className="titulito">Lista de Abogados</h1>
+        <div className="carta">
+            <div className="cartacabeza">
+                <h1 className="titulito1">Lista de Abogados</h1>
                 {
                     MensajeError?
                     <div className="alert alert-success" role="alert">

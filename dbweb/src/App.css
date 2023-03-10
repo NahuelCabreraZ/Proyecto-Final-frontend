@@ -25,4 +25,65 @@ p {
   font-family: Verdana;
   font-size: medium;
   font-weight: bold;
+  color: white;
+}
+
+.loguito {
+padding-left: 1%;
+}
+
+.barrita {
+  background-color: #1B2349;
+}
+
+.carta {
+  background-color: #1B2349;
+  border-radius: 15px;
+  transform: translateY(10%);
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.cartacabeza {
+  background-color: #1B2349;
+  border-radius: 15px;
+}
+.cartacuerpo {
+  background-color: #1B2349;
+}
+
+.textito {
+  color: white;
+}
+
+.form-control {
+  color: white;
+}
+
+.form-group {
+  color: white;
+}
+
+.titulito1{
+  color: white;
+  animation: brillo 3s infinite;
+  padding-left: 30%;
+  padding-top: 1%;
+}
+
+.carta1 {
+  background-color: #1B2349;
+  border-radius: 15px;
+  transform: translateY(10%);
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.cartacuerpo {
+  background-color: #1B2349;
+}
+
+.cartacabeza {
+  background-color: #1B2349;
+  border-radius: 15px;
 }

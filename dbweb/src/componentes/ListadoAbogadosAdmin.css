@@ -3,10 +3,11 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .table {
-    background-color: #121965; /* Cambia el color de fondo a lo que prefieras */
+    background-color: #1B2349; /* Cambia el color de fondo a lo que prefieras */
     position: relative;
     transform: translateY(10%);
     max-width: 100%;
+    
   }
   
   .table th,
@@ -19,7 +20,7 @@
   }
   
   .table tbody tr:hover {
-    background-color: #224e72; /* Cambia el color de fondo "hover" a lo que prefieras */
+    background-color: #1B2349; /* Cambia el color de fondo "hover" a lo que prefieras */
   }
   
   .table-responsive {
@@ -27,21 +28,17 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     max-width: 100%;
-  }
-
-  .table-responsive::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    border-radius: 10px;
   }
   
   .table-responsive::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,.2);
-    border-radius: 5px;
+    background-color: whitesmoke(0,0,0,.2);
+    border-radius: 1px;
   }
   
   .table-responsive::-webkit-scrollbar-track {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 1px;
   }
   
   .button-container {

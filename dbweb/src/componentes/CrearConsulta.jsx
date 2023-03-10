@@ -53,11 +53,13 @@ const enviarInputText = {
 }
 
     return (
-      <div className="card">
-        <div className="card-header">Consultar a || Abogado: {datos_consulta.apellido + ' ' + datos_consulta.nombre}</div>
+      <div className="carta1">
+        <div className="cartacabeza1">
+          <h1 className="titulito1">Consultar al Abogado: {datos_consulta.apellido + ' ' + datos_consulta.nombre}</h1>
+        </div>
             
             
-            <div className="card-body">
+            <div className="cartacuerpo1">
 
               {
               mensajeExito?
@@ -65,30 +67,30 @@ const enviarInputText = {
               :''
               }
             
-            <form onSubmit={guardar_consulta}>
+              <form onSubmit={guardar_consulta}>
 
               <div className="form-group">
                 <label for="">Numero de Documento</label>
                 <input required type="number" ref={consulta} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                <small id="helpId" className="text-muted">Sin Puntos</small>
+                <small id="helpId" className="textito">Sin Puntos</small>
               </div>
 
               <div className="form-group">
                 <label for="">Nombre</label>
                 <input required type="text" ref={consulta1} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                <small id="helpId" className="text-muted"></small>
+                <small id="helpId" className="textito"></small>
               </div>
 
               <div className="form-group">
                 <label for="">Apellido</label>
                 <input required type="text" ref={consulta2} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                <small id="helpId" className="text-muted"></small>
+                <small id="helpId" className="textito"></small>
               </div>
 
               <div className="form-group">
                 <label for="">domicilio</label>
                 <input required type="text" ref={consulta3} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                <small id="helpId" className="text-muted"></small>
+                <small id="helpId" className="textito"></small>
               </div>
 
               <div className="form-group">

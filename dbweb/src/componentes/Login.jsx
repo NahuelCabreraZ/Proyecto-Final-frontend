@@ -43,7 +43,7 @@ const send_form = async(event)=>{
                 }
                 <div className="login-page">
                     <div className="login-form-container">
-                        <h1>Bienvenido!</h1>
+                        <h1 className="titulito">¡Bienvenido!</h1>
                         <Form onSubmit={send_form}>
                             <Form.Group controlId="formBasicEmail" className="form-group-small">
                                 <Form.Label className="my-label">Nombre de Usuario</Form.Label>

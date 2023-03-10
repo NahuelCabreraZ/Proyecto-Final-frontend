@@ -53,48 +53,50 @@ export function CrearClientes() {
   }
   
       return (
-        <div className="card">
-                <div className="card-header">Creacion de Clientes</div>
+        <div className="carta">
+                <div className="cartacabeza">
+                  <h1 className="titulito1">Creacion de Clientes</h1>
+                </div>
               
               
-              <div className="card-body">
+              <div className="cartacuerpo">
               
               <form onSubmit={guardar_cliente}>
   
                 <div className="form-group">
                   <label for="">Numero de Documento</label>
                   <input required type="number" ref={consulta} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                  <small id="helpId" className="text-muted">Sin puntos, solo numeros</small>
+                  <small id="helpId" className="textito">Sin puntos, solo numeros</small>
                 </div>
   
                 <div className="form-group">
                   <label for="">Nombre</label>
                   <input required type="text" ref={consulta1} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                  <small id="helpId" className="text-muted"></small>
+                  <small id="helpId" className="textito"></small>
                 </div>
 
                 <div className="form-group">
                   <label for="">Apellido</label>
                   <input required type="text" ref={consulta2} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                  <small id="helpId" className="text-muted"></small>
+                  <small id="helpId" className="textito"></small>
                 </div>
 
                 <div className="form-group">
                   <label for="">Correo Electronico</label>
                   <input required type="email" ref={consulta3} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                  <small id="helpId" className="text-muted"></small>
+                  <small id="helpId" className="textito"></small>
                 </div>
 
                 <div className="form-group">
                   <label for="">Telefono</label>
                   <input required type="number" ref={consulta4} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                  <small id="helpId" className="text-muted"></small>
+                  <small id="helpId" className="textito"></small>
                 </div>
                 
                 <div className="form-group">
                   <label for="">Domicilio</label>
                   <input required type="text" ref={consulta5} name="" id="" className="form-control" placeholder="" aria-describedby="helpId"/>
-                  <small id="helpId" className="text-muted"></small>
+                  <small id="helpId" className="textito"></small>
                 </div>
                 
                 <div>

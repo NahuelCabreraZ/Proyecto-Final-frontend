@@ -66,9 +66,9 @@ export function ListadoClientes(){
     return (
         <>
         <div className="container">
-       <div className="card">
-        <div className="card-header">
-            Lista de Clientes Activos
+       <div className="carta">
+        <div className="cartacabeza">
+           <h1 className="titulito1">Lista de Clientes Activos</h1>
         </div>
                 {
                     MensajeError?
@@ -123,7 +123,7 @@ export function ListadoClientes(){
                     </tr>
                 ))}
                 <div className="card-footer text-muted" >
-                    <ul><Link name="" id="" class="btn btn-primary" to="/crearClientes" role="button">Agregar Cliente</Link></ul>
+                    <ul><Link name="" id="" className="btn btn-primary" to="/crearClientes" role="button">Agregar Cliente</Link></ul>
                 </div>
             </tbody>
         </table>
