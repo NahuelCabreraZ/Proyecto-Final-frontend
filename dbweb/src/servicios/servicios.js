@@ -32,9 +32,16 @@ export async function getAbogadosById(id_abogados){
 
 //trae a los clientes de la base de datos por el metodo get
 export async function getClientes(){
+    const token = JSON.parse(localStorage.getItem('token'))
+    const jsonTextInput = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization : `Bearer ${token}`,
+        }
+    };
     try{
-
-        const response = await fetch(`${API_URL}/clientes`);
+        const response = await fetch(`${API_URL}/clientes`, jsonTextInput);
         const data = await response.json();
         return data;
     
@@ -46,9 +53,17 @@ export async function getClientes(){
 //trae a los clientes por ID de la base de datos por el metodo get
 
 export async function getClientesById(id_clientes){
+    const token = JSON.parse(localStorage.getItem('token'))
+    const jsonTextInput = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization : `Bearer ${token}`,
+        }
+    };
     try{
 
-        const response = await fetch(`${API_URL}/clientes/${id_clientes}`);
+        const response = await fetch(`${API_URL}/clientes/${id_clientes}`, jsonTextInput);
         const data = await response.json();
         console.log('ServiciosJS',data)
         return data[0];
@@ -61,10 +76,12 @@ export async function getClientesById(id_clientes){
 //Edita a los clientes por ID
 
 export function EditarCliente(idclientes, datos){
+    const token = JSON.parse(localStorage.getItem('token'))
     const jsonTextInput = {
        method: 'PUT',
        headers: {
-           'Content-Type': 'application/json'
+           'Content-Type': 'application/json',
+           Authorization : `Bearer ${token}`,
        },
        body: JSON.stringify(datos)
     };
@@ -156,10 +173,12 @@ export async function Login(datos){
    //variante mejorada
 
    export function GuardarClienteSsj(datos){
+    const token = JSON.parse(localStorage.getItem('token'))
     const jsonTextInput = {
        method: 'POST',
        headers: {
-           'Content-Type': 'application/json'
+           'Content-Type': 'application/json',
+           Authorization : `Bearer ${token}`,
        },
        body: JSON.stringify(datos)
     };
