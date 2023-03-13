@@ -17,9 +17,16 @@ export async function getAbogados(){
 //trae a los abogados por su ID
 
 export async function getAbogadosById(id_abogados){
+    const token = JSON.parse(localStorage.getItem('token'))
+    const jsonTextInput = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization : `Bearer ${token}`,
+        }
+    };
     try{
-
-        const response = await fetch(`${API_URL}/abogados/${id_abogados}`);
+        const response = await fetch(`${API_URL}/abogados/${id_abogados}`, jsonTextInput);
         const data = await response.json();
         console.log('ServiciosJS',data)
         return data[0];
@@ -294,3 +301,16 @@ export async function marcaLeido(id_consultas){
         console.log('Nuestro error es ', error);
     }
 }
+//EDITAR ABOGADOS
+export function EditarAbogado(idabogados, datos){
+    const token = JSON.parse(localStorage.getItem('token'))
+    const jsonTextInput = {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json',
+           Authorization : `Bearer ${token}`,
+       },
+       body: JSON.stringify(datos)
+    };
+        fetch(`${API_URL}/abogados/${idabogados}`, jsonTextInput)
+   }

@@ -72,6 +72,9 @@ export function ListadoAbogadosAdmin(){
                         <td>
                             <button onClick={() => eliminar_abogado(abogado.idabogados)} className="btn btn-danger" type="button" role="button">ELIMINAR</button>
                         </td>
+                        <td>
+                        <Link to={`/editarabogados/${abogado.idabogados}`}><button className="btn btn-warning" type="button">Editar</button></Link>
+                        </td>
                     </tr>
                 ))}
             
