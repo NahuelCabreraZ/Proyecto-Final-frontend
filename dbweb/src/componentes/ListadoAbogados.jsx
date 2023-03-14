@@ -15,8 +15,10 @@ export function ListadoAbogados(){
 
     return (
         <>
-       <div className="card">
-        <div className="card-header">Lista de Abogados disponibles</div>
+       <div className="carta">
+        <div className="cartacabeza">
+        <h1 className="titulito1">Lista de Abogados disponibles</h1>
+        </div>
        <div className="table-responsive"> 
         <Table className="table">
             <thead>

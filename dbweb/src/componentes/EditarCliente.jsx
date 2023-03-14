@@ -48,7 +48,7 @@ const enviarInputText = {
       setTimeout(()=>{
         setMensajeExito('');
         window.location.reload(true)
-      }, 3000)
+      }, 2000)
 
 
 }
